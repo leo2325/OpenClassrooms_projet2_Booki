@@ -11,7 +11,8 @@
 :root{
     --main-blue-color:#0065FC;          
     --main-clear-blue-color:#DEEBFF;   
-    --main-grey-color: #F2F2F2;    
+    --main-grey-color: #F2F2F2;
+    --main-grey-two-color: #D9D9D9;   
     --main-black-color: #000000;     
 }
 * {	
@@ -25,12 +26,11 @@ html {
     max-width: 1440px;
     min-width: 993px; 
     font-family: Raleway;
-    
+    margin: 0 auto;
 }
 body {
     padding: 62px 62px 0;
-    padding-bottom: 0;
-    margin: 0 auto;
+    
 }
 header i {
     color: var(--main-blue-color);
@@ -103,9 +103,8 @@ h1{
     border: 1px solid var(--main-grey-color);
     border-radius: 15px 0 0 15px;
 }
-#inputMainLocation label i { 
-    width: 14px;
-    height: 15px;  
+#inputMainLocation label i{ 
+    width: 14px; 
     font-size: 18px;
     line-height: 21px;
     text-align: center;
@@ -116,14 +115,13 @@ h1{
     border: 1px solid var(--main-grey-color);  
     font-weight: 600;
 }
-#inputMainLocation input#submit {
+input#submitText, button#submitIcon {
     display: flex;
     flex-direction: row;
+    text-align: center;
     align-items: center;
     padding: 15px 16px; 
-    gap: 10px;   
-    width: 132px;
-    height: 49px;   
+    gap: 10px; 
     background: var(--main-blue-color); 
     color: white;   
     border: 1px solid var(--main-blue-color);
@@ -133,7 +131,17 @@ h1{
     line-height: 21px;
     text-align: center;
 }
-
+input#submitText {  
+    width: 132px;
+    height: 49px;   
+}
+button#submitIcon {
+    height: 49px; 
+    display: none;
+}
+button#submitIcon i {
+    color: white;  
+}
 
 #filterBar {
     width: 914px;
@@ -155,7 +163,7 @@ h1{
     font-weight: 700;
     line-height: 21px;
     text-align: center;   
-    border: 2.5px solid var(--main-grey-color);
+    border: 2.5px solid var(--main-grey-two-color);
     border-radius: 2em; 
     padding: 4px 20px;
 }
@@ -164,12 +172,13 @@ h1{
     padding-left: 0;
     margin-left: 0;
 }
+
+
 #filterBar li p{
     padding: 0;
 }
 #filterBar li i{
     font-size: 1.3em;
-   
     padding-right: 0.8em;
 }
 
@@ -424,28 +433,13 @@ footer h3{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ECRAN TABLETTE */
+    /* ECRAN TABLETTE */
 @media screen and (max-width: 991px) {
+    
     html {
         width: 1024px;
         height: 2076px;
     }
-
-
     /* Menu */
     #menu {
         width: 381px;
@@ -458,39 +452,30 @@ footer h3{
     #filterBar li i {
         padding-right: 0.4em;
     }
-
-
-
     #offers {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
         margin-top: 37px;
     }
-
-
     #offersMain, #offersSponsored {
         width: 880px;
-        padding: 0;
+        padding: 0 40px;
+        margin: 0 auto;
     }
-   
-
     /* Bouton "afficher plus" */
     #offersMain input{
         margin-bottom: 46px;
     }
-
-
     #offersSponsored {
         margin-top: 56px;  
     }
     #offersSponsored .articlesContainer{
         display: flex;
         justify-content: space-between;
-        
     }
     #offersSponsored article{
-        width:252px;
+        width: 252px;
         height: 144px;
         margin: 2em auto 56px;
     }
@@ -498,11 +483,9 @@ footer h3{
         width: 106px;
         border-radius: 20px 0px 0px 20px;
     }
-
     #offersSponsoredInfosBox div {
         display: flex;
-        justify-content: space-between;
-        
+        justify-content: space-between;   
     }
     #offersSponsored h3{
         width: 111px;
@@ -515,16 +498,11 @@ footer h3{
         font-weight: 400;
         font-size: 13px;
     }
-    
-    
-
-
     /* SECTION activites*/
     #activites {
         width: 878px;
         height: 331px;
     }
-    
     #activites img {
         width: 182px;
         height: 267px;
@@ -541,11 +519,194 @@ footer h3{
     /* FOOTER*/
     footer {
         width: 880px;
-        height: 191px;
-        
+        height: 191px;   
     }
     footer section{
-        padding:0 3em  ;
+        padding: 0 3em;
+    }
+}
+
+
+
+
+
+
+
+
+/* ECRAN MOBILE */
+@media screen and (max-width: 767px) {
+    body {
+        padding: 25px 0 0;
+    }
+    html {
+        width: 375px;
+        height: 4113px;
     }
 
+    header {
+        margin: 0 auto;
+        padding: 25px;
+    }
+    #headerTop {
+        width: 334px;
+        flex-direction: column;
+        margin: 0;
+    }
+    #headerTop ul {
+        width: 334px;
+        justify-content: space-between;
+        margin: 56px 0;
+    }
+
+
+    /* Menu */
+    #menu {
+        width: 375px;
+        height: 25px;
+    }
+
+
+    h1{
+        width: 298px;
+        height: 52px;
+    }
+
+
+
+    #inputMainLocation {
+        width: 332px;
+    }
+    #inputMainLocation input#submitText {
+        display: none;
+    }
+    #inputMainLocation button#submitIcon {
+        display: block;
+    } 
+
+
+
+
+    #filterBar {
+        width: 328px;
+        height: 86px;
+    }
+    #filterBar ul, #filterBar li {
+        justify-content: flex-start;
+    }
+    #filterBar ul {
+        flex-direction: column;
+    }
+    #filterBar ul :first-child{
+        width: 55px;
+        height: 21px;
+        font-size: 18px;
+        line-height: 21px;
+    }
+    #filterBar li {
+        width: 160px;
+        font-size: 11px;
+        line-height: 13px;
+        text-align: left;   
+        border: 2px solid var(--main-grey-two-color);
+        border-radius: 25px; 
+        padding: 4px 20px;
+    }
+    #filterBar li p{
+        padding: 0;
+    }
+
+    #infoBar {
+        height: 57px;
+    }
+    #infoBar p {
+        width: 298px;   
+    }
+
+
+
+
+
+
+
+
+    #offers {
+        flex-direction: column-reverse;
+    }
+
+    #offersMain, #offersSponsored {
+        width: 375px;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    #offersMain {
+        width: 375px;
+        background-color: white;
+    }
+    /* DIV offersMain */
+    #offersMain .articlesContainer{
+        grid-template-columns: 100%;
+        grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+    }
+
+    .articlesContainer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #offersSponsored article {
+        width: 334px;
+        height: 144px;
+        margin: 5px auto;
+    }
+
+    #offersMain article {
+        width: 335px;
+        height: 199px;
+        margin: 5px auto;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 3px 15px;
+    }
+    
+    #offersMain img {
+        width: 335px;
+        margin-bottom: 0;
+    }
+
+
+    /* SECTION activites*/
+    #activites {
+        width: 334px;
+        height: 886px; 
+    }
+    #activites .articlesContainer {
+        flex-direction: column;
+    }
+    #activites article {
+        width: 334px;
+        height: 190px; 
+        margin: 5px auto;
+    }
+    #activites img {
+        object-fit: cover;
+        z-index: 800;
+        width: 334px;
+        height: 190px;
+        border-radius: 20px;
+    }
+    #activites h3 {
+        width: 334px;
+    }
+
+
+
+    footer {
+        width: 375px;
+        height: 501px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    footer section{
+
+    }
 }
